@@ -24,6 +24,9 @@ public class Robot extends TimedRobot{
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
+  InputManager IM = new InputManager();   //Initializes the class object
+  MotorController MC = new MotorController(); //Initializes the class object
+
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -87,6 +90,11 @@ public class Robot extends TimedRobot{
    */
   @Override
   public void teleopPeriodic() {
+
+    //The joystick value is inputted into the computer to get the var value in the InputManager Class
+    //This sends that input value to the MotorController Class to set as a speed for the motors using the motorcontroller
+    MC.drive(IM.Driver());
+
   }
 
   /**

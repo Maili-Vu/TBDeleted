@@ -10,13 +10,9 @@ package frc.robot;
 //The import library for the Joystick input value(s)
 import edu.wpi.first.wpilibj.Joystick;
 
-/**
- * Add your docs here.
- */
 public class InputManager {
 
-    //Initializes the Logitech Controller we have seen in the driver station screen
-    Joystick joy1 = new Joystick(0);
+    Joystick joy1 = new Joystick(0);    //Initializes the Logitech Controller we have seen in the driver station screen
 
     //The Joystick input axis method for driving
     Double[] Driver(){

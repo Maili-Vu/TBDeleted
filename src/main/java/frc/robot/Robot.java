@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.Compressor;  //For Pneumatics
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,6 +27,10 @@ public class Robot extends TimedRobot{
 
   InputManager IM = new InputManager();   //Initializes the class object
   MotorController MC = new MotorController(); //Initializes the class object
+  Compressor c = new Compressor(0); //For Pneumatics
+  boolean enabled = c.enabled();
+  boolean pressureSwitch = c.getPressureSwitchValue();
+  double current = c.getCompressorCurrent();
 
   /**
    * This function is run when the robot is first started up and should be
@@ -94,7 +99,8 @@ public class Robot extends TimedRobot{
     //The joystick value is inputted into the computer to get the var value in the InputManager Class
     //This sends that input value to the MotorController Class to set as a speed for the motors using the motorcontroller
     MC.drive(IM.Driver());
-
+    c.setClosedLoopControl(true);
+    c.setClosedLoopControl(false);
   }
 
   /**

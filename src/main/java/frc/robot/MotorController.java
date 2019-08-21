@@ -11,9 +11,6 @@ package frc.robot;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.*;
 
-/**
- * Add your docs here.
- */
 public class MotorController {
     //Initializing the variable for the motors
     VictorSPX Motor1 = new VictorSPX(0);
